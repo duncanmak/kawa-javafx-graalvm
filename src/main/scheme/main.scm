@@ -6,19 +6,22 @@
         (class javafx.scene.control Button)
         (class javafx.scene.layout StackPane)
         (class javafx.scene Scene)
-        (class javafx.stage Stage))
+        (class javafx.stage Stage)
 
-(define (hello-world) (System:out:println "Hello World!"))
+        (class org.fxmisc.flowless VirtualizedScrollPane)
+        (class org.fxmisc.richtext CodeArea LineNumberFactory)
+        (class org.fxmisc.richtext.model StyleSpans StyleSpansBuilder)
+        )
 
 (define (start (stage ::Stage))
-  (let ((btn  (Button text: "Say 'Hello World'"
-                      on-action: (lambda (e) (hello-world))))
-        (root (StackPane)))
-    (root:children:add btn)
-    (set! stage:scene (Scene root 300 250))
+  (let* ((area (CodeArea))
+         (root (StackPane (VirtualizedScrollPane area))))
+    (set! stage:scene (Scene root 600 400))
+    (set! stage:title "Editor")
     (stage:show)))
 
 (Platform:startup
  (lambda ()
    (let ((stage (Stage)))
      (start stage))))
+
