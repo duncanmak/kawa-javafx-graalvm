@@ -63,6 +63,9 @@
                 <version>${javafx.maven.plugin.version}</version>
                 <configuration>
                     <mainClass>${main.class}</mainClass>
+                    <options>
+                        <option>-agentlib:native-image-agent=config-merge-dir=src/main/resources/META-INF/native-image</option>
+		    </options>
                 </configuration>
             </plugin>
             <plugin>
