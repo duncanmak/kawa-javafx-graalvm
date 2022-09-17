@@ -80,7 +80,7 @@
             <plugin>
                 <groupId>com.github.arvyy</groupId>
                 <artifactId>kawa-maven-plugin</artifactId>
-                <version>0.0.5</version>
+                <version>0.0.8</version>
             </plugin>
         </plugins>
         <pluginManagement>
@@ -88,7 +88,7 @@
                 <plugin>
                     <groupId>com.github.arvyy</groupId>
                     <artifactId>kawa-maven-plugin</artifactId>
-                    <version>0.0.5</version>
+                    <version>0.0.8</version>
                     <executions>
                         <execution>
                             <id>test</id>
